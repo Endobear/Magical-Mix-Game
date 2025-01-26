@@ -1,0 +1,193 @@
+[gd_scene load_steps=10 format=3 uid="uid://dekhsv00vm7x8"]
+
+[ext_resource type="PackedScene" uid="uid://ln0p7rh80iq" path="res://Scenes/caldeirao.tscn" id="1_koye5"]
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_unnu2"]
+[ext_resource type="Texture2D" uid="uid://cndisj7x6ushx" path="res://Sprites/BGSeparado.png" id="2_3o2oi"]
+[ext_resource type="PackedScene" uid="uid://dqb8yvo02bwxf" path="res://Scenes/Potion.tscn" id="3_57ts4"]
+[ext_resource type="FontFile" uid="uid://bep1xp03ub5vi" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="5_jueyo"]
+[ext_resource type="AudioStream" uid="uid://c3l7m2ufvras8" path="res://SFX/village.ogg" id="6_w0jv6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2rvll"]
+font = ExtResource("5_jueyo")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_jpt7p"]
+font = ExtResource("5_jueyo")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_86cwa"]
+font = ExtResource("5_jueyo")
+font_size = 35
+
+[node name="Game" type="Node2D"]
+scale = Vector2(0.782035, 0.782159)
+script = ExtResource("1_unnu2")
+
+[node name="SketchBg" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(185.41, 325.384)
+scale = Vector2(2.55748, 2.55702)
+texture = ExtResource("2_3o2oi")
+
+[node name="Caldeirao" parent="." instance=ExtResource("1_koye5")]
+offset_left = 39.25
+offset_top = 401.778
+offset_right = 329.256
+offset_bottom = 652.858
+
+[node name="PotionShelf" type="Node2D" parent="."]
+position = Vector2(60.25, 155.778)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PotionShelf"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 26
+alignment = 1
+
+[node name="Potion" parent="PotionShelf/HBoxContainer" instance=ExtResource("3_57ts4")]
+layout_mode = 2
+
+[node name="Potion2" parent="PotionShelf/HBoxContainer" instance=ExtResource("3_57ts4")]
+layout_mode = 2
+color = 1
+
+[node name="Potion3" parent="PotionShelf/HBoxContainer" instance=ExtResource("3_57ts4")]
+layout_mode = 2
+color = 2
+
+[node name="Potion4" parent="PotionShelf" instance=ExtResource("3_57ts4")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -1.0
+offset_top = -135.0
+offset_right = 66.525
+offset_bottom = -16.931
+color = 3
+
+[node name="OrderSpawn" type="Marker2D" parent="."]
+position = Vector2(453.944, 479.442)
+scale = Vector2(2, 2)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OrderSpawn"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 35
+
+[node name="NextOrderTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="GameRun" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+autostart = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 179.02
+offset_top = 3.83554
+offset_right = 179.02
+offset_bottom = 3.83554
+size_flags_horizontal = 3
+
+[node name="TimerLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "0:00"
+label_settings = SubResource("LabelSettings_2rvll")
+metadata/_edit_use_anchors_ = true
+
+[node name="Points" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 134.265
+offset_top = 7.67108
+offset_right = 174.265
+offset_bottom = 30.6711
+grow_horizontal = 0
+grow_vertical = 2
+text = "00"
+label_settings = SubResource("LabelSettings_jpt7p")
+
+[node name="GameOver" type="Panel" parent="."]
+visible = false
+offset_left = 1.0
+offset_right = 368.0
+offset_bottom = 653.0
+
+[node name="TextGameOver" type="Label" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -11.5
+offset_right = 51.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "POINTS_TEXT"
+label_settings = SubResource("LabelSettings_86cwa")
+
+[node name="PointsOver" type="Label" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = 22.5339
+offset_right = 113.0
+offset_bottom = 53.5339
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_86cwa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="Button" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.4325
+offset_top = -46.9851
+offset_right = 93.5675
+offset_bottom = 0.0148926
+grow_horizontal = 2
+grow_vertical = 0
+text = "BACK_BUTTON"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_w0jv6")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="button_up" from="Caldeirao" to="." method="_on_caldeirao_button_up"]
+[connection signal="timeout" from="NextOrderTimer" to="." method="_on_next_order_timer_timeout"]
+[connection signal="timeout" from="GameRun" to="." method="_on_game_run_timeout"]
+[connection signal="button_up" from="GameOver/MenuButton" to="." method="_on_menu_button_button_up"]

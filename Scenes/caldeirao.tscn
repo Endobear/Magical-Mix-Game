@@ -1,0 +1,262 @@
+[gd_scene load_steps=19 format=3 uid="uid://ln0p7rh80iq"]
+
+[ext_resource type="Script" path="res://Scripts/caldeirao.gd" id="1_hld1c"]
+[ext_resource type="SpriteFrames" uid="uid://cmqj2aktkgvwl" path="res://Sprites/bolha_animation.tres" id="2_2uryr"]
+[ext_resource type="Texture2D" uid="uid://dyp04q3qhnw6g" path="res://Sprites/Caldeirao.png" id="3_0r4gk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5784w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u1ea"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xxas"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_le0v3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfigb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8l38"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5x24h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ncf2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5fd3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5uyu1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhvfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7h3f"]
+size = Vector2(287.5, 253)
+
+[sub_resource type="Animation" id="Animation_oailm"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bolhas/BolhaEstatica:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(144, 43), Vector2(89, -114)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bolhas/BolhaEstatica2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7, 1.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(144, 43), Vector2(255, -114)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bolhas/BolhaEstatica:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.34375, 2.34375), Vector2(2.959, 2.959)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bolhas/BolhaEstatica:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0.8, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bolhas/BolhaEstatica2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.34375, 2.34375), Vector2(2.959, 2.959)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bolhas/BolhaEstatica2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ii1e1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bolhas/BolhaEstatica:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(47, -46)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bolhas/BolhaEstatica2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(233, -118)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Bolhas/BolhaEstatica:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.34375, 2.34375)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Bolhas/BolhaEstatica:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bolhas/BolhaEstatica2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bolhas/BolhaEstatica2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.79543, 2.79543)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qd4ey"]
+_data = {
+"Idle": SubResource("Animation_oailm"),
+"RESET": SubResource("Animation_ii1e1")
+}
+
+[node name="Caldeirao" type="Button"]
+custom_minimum_size = Vector2(290.006, 251.08)
+anchors_preset = -1
+anchor_right = 0.254
+anchor_bottom = 0.383
+offset_right = -284.608
+offset_bottom = -240.184
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5784w")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_8u1ea")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xxas")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_le0v3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_tfigb")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_t8l38")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5x24h")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1ncf2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g5fd3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5uyu1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhvfe")
+script = ExtResource("1_hld1c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(146.25, 125.5)
+shape = SubResource("RectangleShape2D_b7h3f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qd4ey")
+}
+autoplay = "Idle"
+
+[node name="Bolhas" type="Node2D" parent="."]
+
+[node name="BolhaEstatica" type="AnimatedSprite2D" parent="Bolhas"]
+texture_filter = 1
+position = Vector2(47, -46)
+scale = Vector2(2.34375, 2.34375)
+sprite_frames = ExtResource("2_2uryr")
+autoplay = "default"
+frame_progress = 0.053035
+
+[node name="BolhaEstatica2" type="AnimatedSprite2D" parent="Bolhas"]
+texture_filter = 1
+position = Vector2(233, -118)
+scale = Vector2(2.79543, 2.79543)
+sprite_frames = ExtResource("2_2uryr")
+autoplay = "default"
+frame_progress = 0.733741
+
+[node name="Caldeirao" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(148, -77)
+scale = Vector2(2.57888, 2.57888)
+texture = ExtResource("3_0r4gk")
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

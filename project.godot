@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Projeto Global Gamejam"
+run/main_scene="res://Scenes/MenuInicial.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+
+[autoload]
+
+Config="*res://config.gd"
+
+[display]
+
+window/size/viewport_width=288
+window/size/viewport_height=512
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
+
+[internationalization]
+
+locale/translation_remaps={}
+locale/translations=PackedStringArray("res://Fonts/Magical Mix translation(v2).en.translation", "res://Fonts/Magical Mix translation(v2).pt.translation")
+locale/locale_filter_mode=0

@@ -1,0 +1,120 @@
+[gd_scene load_steps=11 format=3 uid="uid://8kcuvdm4r5vx"]
+
+[ext_resource type="Script" path="res://Scripts/order.gd" id="1_ghrya"]
+[ext_resource type="Texture2D" uid="uid://c3yd7khh705lb" path="res://Sprites/Cliente_semcor.png" id="2_4ni15"]
+[ext_resource type="Texture2D" uid="uid://bkkruyoxxpve1" path="res://Sprites/Cor_Cliente2.png" id="3_dbqvj"]
+[ext_resource type="Texture2D" uid="uid://dlu425ha6vyak" path="res://Sprites/Cor_Cliente3.png" id="4_ojyrp"]
+[ext_resource type="Texture2D" uid="uid://q2r3d8cf5vcn" path="res://Sprites/Cor_Cliente4.png" id="5_3dyxi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gudjl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4ni15")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dbqvj")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ojyrp")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3dyxi")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_hmptn"]
+resource_name = "Appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-110, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gemmo"]
+resource_name = "Dissapear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-110, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s56sf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ckfn8"]
+_data = {
+"Appear": SubResource("Animation_hmptn"),
+"Dissapear": SubResource("Animation_gemmo"),
+"RESET": SubResource("Animation_s56sf")
+}
+
+[node name="Order" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ghrya")
+
+[node name="Node2D" type="Node2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="Color" type="ColorRect" parent="Node2D"]
+offset_left = 31.0
+offset_top = 3.0
+offset_right = 62.0
+offset_bottom = 29.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ClienteSemcor" type="AnimatedSprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(33, 16)
+sprite_frames = SubResource("SpriteFrames_gudjl")
+animation = &"4"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ckfn8")
+}

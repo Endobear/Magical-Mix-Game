@@ -1,0 +1,256 @@
+[gd_scene load_steps=9 format=3 uid="uid://dueykgbqxccwu"]
+
+[ext_resource type="Script" path="res://Scripts/menu_inicial.gd" id="1_d6htw"]
+[ext_resource type="FontFile" uid="uid://bep1xp03ub5vi" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="2_lurl5"]
+[ext_resource type="Texture2D" uid="uid://8sxxvutcp6ba" path="res://Sprites/BANDEIRA-ESCULHAMBADA.png" id="3_ugsas"]
+[ext_resource type="Texture2D" uid="uid://dcrr4h1bqjw7f" path="res://Sprites/brasil_e_portugal_capa_widelg.png" id="4_rjwbq"]
+[ext_resource type="Texture2D" uid="uid://cndisj7x6ushx" path="res://Sprites/BGSeparado.png" id="5_esf3t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mu304"]
+font = ExtResource("2_lurl5")
+font_size = 34
+
+[sub_resource type="LabelSettings" id="LabelSettings_1rrsu"]
+font = ExtResource("2_lurl5")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_injjq"]
+font = ExtResource("2_lurl5")
+font_size = 13
+
+[node name="MenuInicial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-141, 67)
+script = ExtResource("1_d6htw")
+
+[node name="SketchBg" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(143.1, 255.4)
+scale = Vector2(2.0125, 2.0125)
+texture = ExtResource("5_esf3t")
+
+[node name="Home" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Home"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="StartGame" type="Button" parent="Home/VBoxContainer"]
+layout_mode = 2
+text = "PLAY_BUTTON"
+
+[node name="Options" type="Button" parent="Home/VBoxContainer"]
+layout_mode = 2
+text = "OPTIONS_BUTTON"
+
+[node name="HowButton" type="Button" parent="Home/VBoxContainer"]
+layout_mode = 2
+text = "HOW_BUTTON"
+
+[node name="Label" type="Label" parent="Home"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121528
+anchor_top = 0.142578
+anchor_right = 0.881944
+anchor_bottom = 0.207031
+grow_horizontal = 2
+text = "Magical Mix"
+label_settings = SubResource("LabelSettings_mu304")
+metadata/_edit_use_anchors_ = true
+
+[node name="Options" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Control" parent="Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 109.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Options/Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="English" type="Button" parent="Options/Container/VBoxContainer"]
+custom_minimum_size = Vector2(121, 68)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Bandeira-esculhambada" type="Sprite2D" parent="Options/Container/VBoxContainer/English"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_ugsas")
+offset = Vector2(80, 45)
+
+[node name="Portuguese" type="Button" parent="Options/Container/VBoxContainer"]
+custom_minimum_size = Vector2(121, 68)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Bandeira-esculhambada" type="Sprite2D" parent="Options/Container/VBoxContainer/Portuguese"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_rjwbq")
+offset = Vector2(80, 45)
+
+[node name="Label" type="Label" parent="Options"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121528
+anchor_top = 0.142578
+anchor_right = 0.881944
+anchor_bottom = 0.207031
+grow_horizontal = 2
+text = "OPTIONS_BUTTON"
+label_settings = SubResource("LabelSettings_mu304")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionsBack" type="Button" parent="Options"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.288
+anchor_top = 0.914
+anchor_right = 0.715
+anchor_bottom = 1.0
+offset_left = 0.0559921
+offset_top = 0.0319824
+offset_right = 0.0799866
+grow_horizontal = 2
+grow_vertical = 0
+text = "BACK_BUTTON"
+
+[node name="DificultySelector" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DificultySelector"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Easy" type="Button" parent="DificultySelector/VBoxContainer"]
+layout_mode = 2
+text = "EASY_BUTTON"
+
+[node name="Medium" type="Button" parent="DificultySelector/VBoxContainer"]
+layout_mode = 2
+text = "MEDIUM_BUTTON"
+
+[node name="Hard" type="Button" parent="DificultySelector/VBoxContainer"]
+layout_mode = 2
+text = "HARD_BUTTON"
+
+[node name="Start" type="Button" parent="DificultySelector/VBoxContainer"]
+layout_mode = 2
+text = "STARTGAME_BUTTON"
+
+[node name="DificultyDescription" type="Label" parent="DificultySelector"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.00390625
+anchor_right = 0.986111
+anchor_bottom = 0.242188
+grow_horizontal = 2
+text = "DIFFICULTY_TITLE"
+label_settings = SubResource("LabelSettings_1rrsu")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HowToPlay" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DificultyDescription" type="Label" parent="HowToPlay"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_top = 0.074
+anchor_right = 0.993
+anchor_bottom = 0.867
+offset_left = 0.136
+offset_top = 0.112
+offset_right = 0.0159912
+offset_bottom = 0.0959778
+grow_horizontal = 2
+grow_vertical = 2
+text = "HOW_TEXT"
+label_settings = SubResource("LabelSettings_injjq")
+autowrap_mode = 2
+
+[node name="HowToBack" type="Button" parent="HowToPlay"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -61.5
+offset_top = -31.0
+offset_right = 61.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "BACK_BUTTON"
+
+[connection signal="button_up" from="Home/VBoxContainer/StartGame" to="." method="_on_start_game_button_up"]
+[connection signal="button_up" from="Home/VBoxContainer/Options" to="." method="_on_options_button_up"]
+[connection signal="button_up" from="Home/VBoxContainer/HowButton" to="." method="_on_how_button_button_up"]
+[connection signal="button_up" from="Options/Container/VBoxContainer/English" to="." method="_on_english_button_up"]
+[connection signal="button_up" from="Options/Container/VBoxContainer/Portuguese" to="." method="_on_portuguese_button_up"]
+[connection signal="button_up" from="Options/OptionsBack" to="." method="_on_options_back_button_up"]
+[connection signal="button_up" from="DificultySelector/VBoxContainer/Easy" to="." method="_on_easy_button_up"]
+[connection signal="button_up" from="DificultySelector/VBoxContainer/Medium" to="." method="_on_medium_button_up"]
+[connection signal="button_up" from="DificultySelector/VBoxContainer/Hard" to="." method="_on_hard_button_up"]
+[connection signal="button_up" from="DificultySelector/VBoxContainer/Start" to="." method="_on_start_button_up"]
+[connection signal="button_up" from="HowToPlay/HowToBack" to="." method="_on_how_to_back_button_up"]

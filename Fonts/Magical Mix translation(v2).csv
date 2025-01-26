@@ -1,0 +1,27 @@
+keys,en,pt
+PLAY_BUTTON,Play,Jogar
+HOW_BUTTON,How to play,Como jogar
+HOW_TEXT,"In Magical Mix, you play as an alchemist creating potions for customers, using primary colors (red, blue, and green) to mix them to get the required colors. But there's a catch... the alchemist is too short to see inside the cauldron, so the player must rely on the color of the bubbles for guidance! 
+
+ To create the potions requested by the customers. To do this, you must brew a potion that produces bubbles matching the color requested, which is displayed in the bottom corner of the screen.
+
+To achieve the desired colors, use the ingredients Red (R), Green (G), and Blue (B). Click on an ingredient and then on the cauldron to add it, utilizing the RGB color system to mix the colors.
+
+There’s also the neutralizer (the dropper with the very powerful black liquid), which resets your potion to its initial state by removing all added ingredients. Use it the same way as the other ingredients.","Em Magical mix, você é um alquimista que faz poções pra clientes (sendo variadas pela cor e usando as cores primárias vermelho, azul e verde para fazer as cores). Só que tem um problema... O alquimista é muito baixinho(a) pra ver dentro do caldeirão, então o jogador se guia pela cor das bolhas!  
+
+Para fazer as poções que os clientes pedem, para isso você deve fazer uma poção que gere bolhas da cor correspondente ao pedido do cliente, que aparece no canto inferior da tela.
+
+Para atingir as cores desejadas, você deve usar os produtos Vermelho(R), Verde(G) e Azul(B) clicando em um deles e depois no caldeirão para adicionar na cor, usando o sistema de Cores RGB.
+
+Também há o neutralizador (o conta-gotas com o fortíssimo líquido preto), que volta sua poção ao estado inicial, retirando todos os produtos dela. Usando ele da mesma forma que os outros produtos."
+DIFFICULTY_TITLE,Select a difficulty,Selecione uma dificuldade
+EASY_BUTTON,Easy,Fácil
+HARD_BUTTON,Hard,Difícil
+EASY_DESCRIPTION,Each primary color has 3 variations (0-2),Cada cor primária tem 3 variações diferentes (0-2)
+HARD_DESCRIPTION,Each primary color has 5 variations (0-4),Cada cor primária tem 5 variações diferentes (0-4)
+STARTGAME_BUTTON,Start,Começar
+MEDIUM_BUTTON,Medium,Médio
+MEDIUM_DESCRIPTION,Each primary color has 4 variations (0-3),Cada cor primária tem 4 variações diferentes (0-3)
+OPTIONS_BUTTON,Options,Opções
+BACK_BUTTON,Back,Voltar
+POINTS_TEXT,Points:,Pontuação:

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bnthf6tffmjsw"
+
+[deps]
+
+files=["res://Fonts/Magical Mix translation(v2).en.translation", "res://Fonts/Magical Mix translation(v2).pt.translation"]
+
+source_file="res://Fonts/Magical Mix translation(v2).csv"
+dest_files=["res://Fonts/Magical Mix translation(v2).en.translation", "res://Fonts/Magical Mix translation(v2).pt.translation"]
+
+[params]
+
+compress=true
+delimiter=0

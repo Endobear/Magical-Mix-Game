@@ -1,0 +1,183 @@
+[gd_scene load_steps=23 format=3 uid="uid://dqb8yvo02bwxf"]
+
+[ext_resource type="Script" path="res://Scripts/potion.gd" id="1_rlhy5"]
+[ext_resource type="Texture2D" uid="uid://cokhyymc3v1eq" path="res://Sprites/Frasco.png" id="2_ltn5r"]
+[ext_resource type="Texture2D" uid="uid://cewrta3iqwa4y" path="res://Sprites/Liquido.png" id="3_gqscb"]
+[ext_resource type="Texture2D" uid="uid://c8jx5aajyx6le" path="res://Sprites/Neutralizador.png" id="4_qncqc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7tto"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_45gky"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yuhka"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ny3l4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rt43o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_epmjy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5k2mn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f8rtn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwxgh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eu8ba"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ssrnd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vv6m"]
+size = Vector2(69, 69)
+
+[sub_resource type="Animation" id="Animation_t68gn"]
+resource_name = "hover_in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.34461, 2.34461), Vector2(2.705, 2.705)]
+}
+
+[sub_resource type="Animation" id="Animation_kjlf2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.34461, 2.34461)]
+}
+
+[sub_resource type="Animation" id="Animation_fefma"]
+resource_name = "hover_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.705, 2.705), Vector2(2.34461, 2.34461)]
+}
+
+[sub_resource type="Animation" id="Animation_bbr1q"]
+resource_name = "Selected"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.166667, 0.633333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.174533, 0.174533]
+}
+
+[sub_resource type="Animation" id="Animation_8g8kq"]
+resource_name = "Unselect"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_it8gs"]
+_data = {
+"RESET": SubResource("Animation_kjlf2"),
+"Selected": SubResource("Animation_bbr1q"),
+"Unselect": SubResource("Animation_8g8kq"),
+"hover_in": SubResource("Animation_t68gn"),
+"hover_out": SubResource("Animation_fefma")
+}
+
+[node name="Potion" type="Button"]
+custom_minimum_size = Vector2(67.525, 118.069)
+anchors_preset = -1
+anchor_right = 0.059
+anchor_bottom = 0.181
+offset_right = -59.968
+offset_bottom = -109.288
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w7tto")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_45gky")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yuhka")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ny3l4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rt43o")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_epmjy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5k2mn")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_f8rtn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qwxgh")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_eu8ba")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ssrnd")
+expand_icon = true
+script = ExtResource("1_rlhy5")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(33.5, 62.5)
+shape = SubResource("RectangleShape2D_8vv6m")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(33, 59)
+scale = Vector2(2.34461, 2.34461)
+metadata/_edit_group_ = true
+
+[node name="Frasco" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+texture = ExtResource("2_ltn5r")
+
+[node name="Liquido" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+texture = ExtResource("3_gqscb")
+
+[node name="Neutralizador" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(0, 0.85302)
+scale = Vector2(0.966313, 0.966313)
+texture = ExtResource("4_qncqc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_it8gs")
+}
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
